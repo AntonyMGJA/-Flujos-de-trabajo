@@ -6,7 +6,6 @@ import { EstadoModule } from './estado/estado.module';
 import { MunicipioModule } from './municipio/municipio.module';
 import { LocalidadModule } from './localidad/localidad.module';
 import { ClienteModule } from './cliente/cliente.module';
-import { ModulClientModule } from './modul-client/modul-client.module';
 
 @Module({
   imports: [
@@ -24,7 +23,6 @@ import { ModulClientModule } from './modul-client/modul-client.module';
     MunicipioModule,
     LocalidadModule,
     ClienteModule,
-    ModulClientModule,
   ],
   controllers: [AppController],
   providers: [AppService],
