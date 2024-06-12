@@ -43,7 +43,10 @@ export class LocalidadService {
   getFind(id: number){
     return this.localidadRepository.findOne({where: {
         id
-    }
+    },
+    relations: {
+          municipio: true
+        }                                   
   })
 }
     
