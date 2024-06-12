@@ -9,7 +9,9 @@ export class ClienteController {
     constructor(private readonly clienteService: ClienteService) {}
 
     @Post()
-    createClient(@Body() client: cretCliente): Promise<Cliente>{
+    createClient(@Body() client: cretCliente)
+    {
+        console.log(client)
         return this.clienteService.create(client);
     }
 
@@ -24,7 +26,7 @@ export class ClienteController {
     }
 
     @Patch(':id')
-    updateClient(@Param('id', ParseIntPipe) id: number,  @Body() updatC: updatCliente): Promise<Cliente> {
+    updateClient(@Param('id', ParseIntPipe) id: number,  @Body() updatC: updatCliente) {
         return this.clienteService.updateClient(id, updatC)
     }
 
