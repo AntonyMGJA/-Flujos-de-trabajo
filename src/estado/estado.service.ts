@@ -22,12 +22,17 @@ export class EstadoService {
       }
     
       findAll(): Promise<Estado[]> {
-        return this.estadoRepository.find();
+        return this.estadoRepository.find({relations: {
+          municipios: true
+        }});
       }
 
       getFind(id: number){
         return this.estadoRepository.findOne({where: {
             id
+        },
+        relations: {
+          municipios: true
         }
       })
     }
