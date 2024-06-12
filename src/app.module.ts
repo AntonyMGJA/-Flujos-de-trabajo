@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EstadoModule } from './estado/estado.module';
 import { MunicipioModule } from './municipio/municipio.module';
 import { LocalidadModule } from './localidad/localidad.module';
-import { ClienteModule } from './cliente/cliente.module';
+import { ClienteModule } from './modul-client/cliente.module';
 
 @Module({
   imports: [
