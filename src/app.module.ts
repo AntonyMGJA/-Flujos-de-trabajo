@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EstadoModule } from './estado/estado.module';
 import { MunicipioModule } from './municipio/municipio.module';
 import { LocalidadModule } from './localidad/localidad.module';
+import { ClienteModule } from './cliente/cliente.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { LocalidadModule } from './localidad/localidad.module';
     EstadoModule,
     MunicipioModule,
     LocalidadModule,
+    ClienteModule,
   ],
   controllers: [AppController],
   providers: [AppService],
