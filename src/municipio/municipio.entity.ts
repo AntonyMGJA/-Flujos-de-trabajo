@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
 import { Estado } from '../estado/estado.entity';
 import { Localidad } from '../localidad/localidad.entity';
 
@@ -11,8 +11,10 @@ export class Municipio {
   nombre: string;
 
   @ManyToOne(() => Estado, estado => estado.municipios)
+  @JoinColumn()
   estado: Estado;
 
   @OneToMany(() => Localidad, localidad => localidad.municipio)
+  @JoinColumn()
   localidades: Localidad[];
 }

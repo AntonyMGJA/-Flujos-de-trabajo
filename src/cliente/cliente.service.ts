@@ -23,8 +23,9 @@ export class ClienteService {
 
     getFind(id: number){
         return this.clienteRepository.findOne({where: {
-            id
-        }
+            id,
+            
+        },
       })
     }
 
@@ -45,6 +46,7 @@ export class ClienteService {
             this.clienteRepository.update({id}, cliente)
             return this.clienteRepository.findOne({where:{id}});
         }
+
         else{
             throw new Error("No existe el cliente");
         }
