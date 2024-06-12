@@ -14,7 +14,7 @@ import { LocalidadModule } from './localidad/localidad.module';
       port: 3306,
       username: 'root',
       password: '',
-      database: 'test',
+      database: 'Actividad4',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

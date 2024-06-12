@@ -9,7 +9,11 @@ export class EstadoService {
     constructor(@InjectRepository(Estado) private readonly estadoRepository: Repository<Estado>,) {}
 
     async create(nombre: cretEstado){
-        const existingEstado = await this.estadoRepository.findOne({ where: nombre});
+        const existingEstado = await this.estadoRepository.findOne({
+          where: {
+            nombre: nombre.nombre
+          }
+        });
         if (existingEstado) {
           throw new Error('El estado ya existe');
         }
