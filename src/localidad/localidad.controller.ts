@@ -1,4 +1,4 @@
-import { Controller, Body, Post, Get, Param } from '@nestjs/common';
+import { Controller, Body, Post, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { LocalidadService } from './localidad.service';
 import { creatLocalidad } from './dto/localidad.dto'
 
@@ -17,7 +17,7 @@ export class LocalidadController {
     }
   
     @Get(':id')
-    findOne(@Param('id') id: number){
+    findOne(@Param('id', ParseIntPipe) id: number){
       return this.localidadService.getFind(id);
     }
 }

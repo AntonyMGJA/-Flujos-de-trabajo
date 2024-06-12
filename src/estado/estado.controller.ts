@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, ParseIntPipe } from '@nestjs/common';
 import { EstadoService } from './estado.service';
 import { cretEstado } from './dto/estado.dto';
 
@@ -17,7 +17,7 @@ export class EstadoController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: number){
+  findOne(@Param('id', ParseIntPipe) id: number){
     return this.estadoService.getFind(id);
   }
 }

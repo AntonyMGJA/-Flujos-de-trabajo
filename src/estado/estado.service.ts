@@ -14,6 +14,7 @@ export class EstadoService {
             nombre: nombre.nombre
           }
         });
+        
         if (existingEstado) {
           throw new Error('El estado ya existe');
         }
